@@ -21,7 +21,7 @@ class Topics(object):
         r = requests.post(self.url,data=params)
         return r
     
-    def post_update_topic(self,token,topic_id,title,tab,content):
+    def post_update_topic(self,token,topic_id,tab,title,content):
         params = {
             "accesstoken":token,
             "topic_id":topic_id,

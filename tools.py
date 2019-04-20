@@ -1,9 +1,10 @@
 import csv
 import os
 
-def get_data():
+def get_data(filePath=None):
     data =[]
-    with open('./test_data/create_topic.csv') as f:
+    csv_file = os.path.join(rootPath(),'test_data/create_topic.csv')
+    with open(csv_file) as f:
         csv_reader = csv.reader(f)
         next(csv_reader)
         for row in csv_reader:
@@ -11,6 +12,9 @@ def get_data():
 
     return data
 
+
+def rootPath():
+    return os.path.dirname(os.path.abspath(__file__))
 
 print(get_data())
     
